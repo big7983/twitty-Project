@@ -21,6 +21,17 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
+  const now = new Date().toLocaleString("th-TH", {
+    timeZone: "Asia/Bangkok",
+    hour12: false,
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+
   try {
     const body = await req.json();
     const { user, post, img } = body;
@@ -28,7 +39,8 @@ export async function POST(req: Request) {
       data: {
         user,
         post,
-        img
+        img,
+        datetime: now
       },
     });
     return new Response(JSON.stringify(newPost), {

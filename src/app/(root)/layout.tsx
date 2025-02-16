@@ -4,7 +4,7 @@ import "@/app/globals.css";
 import Navber from "@/components/Navber";
 import { SessionProvider } from "next-auth/react";
 
-export default function RootLayout({
+export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;

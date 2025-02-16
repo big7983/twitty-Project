@@ -16,7 +16,7 @@ datasource db {
 model Post {
   id       String    @id @default(auto()) @map("_id") @db.ObjectId
   user     String    
-  datetime DateTime  @default(now())
+  datetime String
   img      String
   post     String    
 }
