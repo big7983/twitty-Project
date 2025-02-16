@@ -24,19 +24,7 @@ export default function Page() {
             />
             Sign in with Google
           </button>
-          <button
-            type="button"
-            className="text-base w-full border border-gray-300 py-3 px-4 rounded-lg flex items-center justify-center text-gray-600 hover:bg-gray-100"
-          >
-            <Image
-              className="mr-2"
-              src="/Microsoft_icon.png"
-              alt="Microsoft Logo"
-              width={18}
-              height={18}
-            />
-            Sign in with Microsoft
-          </button>
+          
         </div>
       </div>
     </div>

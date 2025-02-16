@@ -15,6 +15,10 @@ export async function middleware(request: NextRequest) {
 
   const isAuthenticated = !!token;
 
+  if ( request.url.startsWith("/google_logo.png") || request.url.startsWith("/Microsoft_icon.png")) {
+    return NextResponse.next(); 
+  }
+
   // ถ้าผู้ใช้ยังไม่ล็อกอินและไม่ได้อยู่ที่ /login ให้ redirect ไปที่ /login
   if (!isAuthenticated && path !== "/login") {
     return NextResponse.redirect(new URL("/login", request.url));

@@ -29,7 +29,7 @@ export default function Home() {
 
       // ส่งข้อมูลไปยัง API ด้วย POST method
       const response = await axios.post(
-        "http://localhost:3000/api/v1/posts",
+        "/api/v1/posts",
         newPostData
       );
       setData((prevPosts) => [response.data, ...prevPosts]);
@@ -42,7 +42,7 @@ export default function Home() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/v1/posts"); // เรียก API โดยตรง
+        const response = await axios.get("/api/v1/posts"); // เรียก API โดยตรง
         setData(response.data);
       } catch {
         setError("เกิดข้อผิดพลาดในการโหลดข้อมูล");
